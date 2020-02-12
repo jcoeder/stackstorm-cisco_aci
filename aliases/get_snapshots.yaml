@@ -1,0 +1,25 @@
+---
+name: "get_snapshot"
+pack: "cisco_aci"
+action_ref: "cisco_aci.get_snapshots"
+description: "List available snapshots of a fabric"
+
+# Accept these formats as input
+formats:
+  - "aci get snapshots {{ apic }}"
+
+# Just let the user know something is happening
+ack:
+  format: "Working..."
+
+# Return available snapshots to user
+result:
+  format: |
+      Action completed!
+      {% for entry in execution.result.result.imdata -%}
+       =================================================================
+       name : {{ entry.configSnapshot.attributes.name }}
+       descr : {{ entry.configSnapshot.attributes.descr }}
+       createTime : {{ entry.configSnapshot.attributes.createTime }}
+       dn : {{ entry.configSnapshot.attributes.dn }}
+      {%+ endfor %}

@@ -16,6 +16,7 @@
 
 from aci_base_action_test_case import CiscoACIBaseActionTestCase
 
+from find_ip import FindIP
 
 class GetAPsActionTestCase(CiscoACIBaseActionTestCase):
     __test__ = True

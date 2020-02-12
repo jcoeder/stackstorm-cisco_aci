@@ -12,11 +12,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 
-# from mock import MagicMock
+#from mock import MagicMock
 
 from aci_base_action_test_case import CiscoACIBaseActionTestCase
-
-from find_ip import FindIP
 
 
 class GetAPsActionTestCase(CiscoACIBaseActionTestCase):

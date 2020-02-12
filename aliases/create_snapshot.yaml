@@ -1,0 +1,19 @@
+---
+name: "create_snapshot"
+pack: "cisco_aci"
+action_ref: "cisco_aci.create_snapshot"
+description: "Create a snapshot of the ACI fabric"
+
+# Accept these formats as input
+formats:
+  - "aci create snapshot {{ apic }}"
+  - "aci create snapshot {{ apic }} {{ description }}"
+
+# Just let the user know something is happening
+ack:
+  format: "Working..."
+
+# Let the user know the snapshot has been created.  Action does not return useful information yet.
+result:
+  format: |
+      Snapshot created!

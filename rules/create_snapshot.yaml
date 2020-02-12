@@ -29,4 +29,4 @@
         ref: "cisco_aci.create_snapshot"
         parameters:
             apic: "{{trigger.body.apic}}"
-            credentials: '{"user":"{{trigger.body.credentials.user}}","passwd":"{{trigger.body.credentials.passwd}}"}
+            credentials: '{"user":"{{trigger.body.credentials.user}}","passwd":"{{trigger.body.credentials.passwd}}"}'

@@ -1,0 +1,30 @@
+# This actually does nothing. Webhooks are not bidirectional.  This was just for learning.  Hopefully you can learn from it too.  The following curl command will trigger this trigger this rule.
+
+# curl -k https://STACKSTORM_HOSTNAME_HERE/api/v1/webhooks/aci-get-snapshots -d '{ "name": "aci-get-snapshots", "apic": "APIC_HOSTNAME_HERE", "credentials": { "user": "APIC_USER_HERE", "passwd": "APIC_PASSWORD_HERE" }}' -H 'Content-Type: application/json' -H 'St2-Api-Key: STACKSTORM_API_KEY_HERE'
+---
+    name: "get_snapshots"
+    pack: "cisco_aci"
+    description: "Get available snapshots from a given apic"
+    enabled: true
+
+    trigger:
+        type: "core.st2.webhook"
+        parameters:
+            url: "aci-get-snapshots"
+
+    criteria:
+        trigger.body.name:
+            pattern: "aci-get-snapshots"
+            type: "equals"
+        trigger.body.apic:
+            pattern: ""
+            type: "exists"
+        trigger.body.credentials:
+            pattern: ""
+            type: "exists"
+
+    action:
+        ref: "cisco_aci.get_snapshots"
+        parameters:
+            apic: "{{trigger.body.apic}}"
+            credentials: '{"user":"{{trigger.body.credentials.user}}","passwd":"{{trigger.body.credentials.passwd}}"}'

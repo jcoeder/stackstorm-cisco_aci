@@ -1,7 +1,7 @@
 # This rule WILL actuall do something but does not provide any useful feedback.  Use this as an example for learning.  You can see how you can use optional parameters like "description".
-
+#
 # curl -k https://STACKSTORM_HOSTNAME_HERE/api/v1/webhooks/aci-create-snapshot -d '{ "name": "aci-get-snapshots", "apic": "APIC_HOSTNAME_HERE", "credentials": { "user": "APIC_USER_HERE", "passwd": "APIC_PASSWORD_HERE" }}' -H 'Content-Type: application/json' -H 'St2-Api-Key: STACKSTORM_API_KEY_HERE'
-
+#
 # curl -k https://STACKSTORM_HOSTNAME_HERE/api/v1/webhooks/aci-create-snapshot -d '{ "name": "aci-get-snapshots", "apic": "APIC_HOSTNAME_HERE", "credentials": { "user": "APIC_USER_HERE", "passwd": "APIC_PASSWORD_HERE" }, "description": "SNAPSHOT_DESCRIPTION_HERE"}' -H 'Content-Type: application/json' -H 'St2-Api-Key: STACKSTORM_API_KEY_HERE'
 ---
     name: "create_snapshot"

@@ -1,5 +1,5 @@
-ref: cisco_aci_testing
-name: cisco_aci_testing
+ref: cisco_aci
+name: cisco_aci
 description: Cisco ACI pack
 version: 0.1.6
 author: Paul Mulvihill

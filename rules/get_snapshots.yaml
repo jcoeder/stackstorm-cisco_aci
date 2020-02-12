@@ -1,5 +1,5 @@
 # This actually does nothing. Webhooks are not bidirectional.  This was just for learning.  Hopefully you can learn from it too.  The following curl command will trigger this trigger this rule.
-
+#
 # curl -k https://STACKSTORM_HOSTNAME_HERE/api/v1/webhooks/aci-get-snapshots -d '{ "name": "aci-get-snapshots", "apic": "APIC_HOSTNAME_HERE", "credentials": { "user": "APIC_USER_HERE", "passwd": "APIC_PASSWORD_HERE" }}' -H 'Content-Type: application/json' -H 'St2-Api-Key: STACKSTORM_API_KEY_HERE'
 ---
     name: "get_snapshots"
